@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:inputType="phone"
+            android:digits="0123456789."
+            android:textSize="22sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/weightEntryEditText"
+            android:hint="Current Weight"
+            android:nextFocusUp="@id/weightEntryEditText"
+            android:nextFocusLeft="@id/weightEntryEditText" />
+    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:text="Date:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textSize="22sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/weightEntryDateTxtView"
+        android:textSize="22sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|bottom">
+        <Button
+            android:text="Delete This Entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/deleteWeightEntryBtn"
+            android:textSize="22sp"
+            android:backgroundTint="@android:color/holo_red_light" />
+    </LinearLayout>
+    <Button
+        android:text="Submit Weight Entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/weightEntrySubmissionBtn"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:textSize="22sp" />
+</LinearLayout>

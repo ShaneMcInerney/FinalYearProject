@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+      This file cotains code, (slightly modified) from a Xamarin Andorid Google Services Activity Recognition API Sample
+      https://github.com/xamarin/monodroid-samples/tree/master/google-services/Location/ActivityRecognition
+     -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <TextView
+      android:id="@+id/detected_activity_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/request_activity_updates_button"
+      android:layout_marginTop="8dp"
+      android:text="Standing" />
+
+  <TextView
+      android:id="@+id/detected_activity_confidence_level"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_below="@+id/request_activity_updates_button"
+      android:layout_marginTop="8dp" />
+
+  <ProgressBar
+      android:id="@+id/detected_activity_progress_bar"
+      style="@android:style/Widget.ProgressBar.Horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_below="@+id/detected_activity_name"
+      android:layout_marginTop="4dp"
+      android:minHeight="6dp"
+      android:progress="1" />
+  
+</RelativeLayout>

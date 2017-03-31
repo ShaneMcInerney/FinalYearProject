@@ -1,0 +1,32 @@
+﻿<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+
+    <item
+      android:id="@+id/nav_home"
+      android:title="Home" />
+    <item
+      android:id="@+id/nav_fallDetector"
+      android:title="Fall Detector" />
+    <item
+      android:id="@+id/nav_myEmergencyMessage"
+      android:title="My Emergency Message" />
+    <item
+      android:id="@+id/nav_emergencyContacts"
+      android:title="Emergency Contacts" />
+    <item
+      android:id="@+id/nav_mySteps"
+      android:title="My Steps" />
+    <item
+       android:id="@+id/nav_myWeight"
+       android:title="My Weight" />
+    <item
+     android:id="@+id/nav_mySleep"
+     android:title="My Sleep" />
+    <item
+     android:id="@+id/nav_myHeartRate"
+     android:title="My Heart Rate" />
+    <item
+        android:id="@+id/nav_calibration"
+        android:title="Calibration" />
+  </group>
+</menu>

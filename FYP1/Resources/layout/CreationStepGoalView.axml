@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+               android:focusable="true"
+    android:focusableInTouchMode="true">
+  <android.support.design.widget.TextInputLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/stepCountGoalEditTxt"
+        android:textSize="20sp"
+        android:hint="Step Count"
+         android:nextFocusUp="@id/stepCountGoalEditTxt"
+            android:nextFocusLeft="@id/stepCountGoalEditTxt"/>
+  </android.support.design.widget.TextInputLayout>
+   <TextView
+        android:text="Goal Type:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/stepGoalTypeLabel"
+        android:textSize="20sp"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:id="@+id/stepGoalTimeSpinner"
+        android:textSize="20sp"/>
+  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|bottom">
+    <Button
+        android:text="Delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/deleteStepGoalBtn"
+         android:backgroundTint="@android:color/holo_red_light"/>
+  </LinearLayout>
+  <Button
+       android:text="Save Step Goal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/stepGoalSaveBtn"
+       android:backgroundTint="@android:color/holo_green_light"
+       android:textSize="20sp"/>
+</LinearLayout>

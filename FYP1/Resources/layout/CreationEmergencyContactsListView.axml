@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <CheckBox
+      android:text="Select/Deselect All"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/selectDeselectAllContacts"
+      android:textSize="20sp"/>
+
+  <ListView
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="440dp"
+      android:id="@+id/ContactsListView"
+      android:isScrollContainer="true"
+      android:clickable="true"/>
+
+  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center|bottom">
+    <Button
+       android:text="Update Emergency Contacts"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/UpdateEmergencyContactListBtn"
+       android:background="@android:color/holo_green_light"
+       android:textSize="20sp"/>
+  </LinearLayout>
+
+</LinearLayout>

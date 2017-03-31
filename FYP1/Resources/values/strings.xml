@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="hello">Hello World, Click Me!</string>
+  <string name="app_name">Helpr</string>
+  <string name="openDrawer">Drawer Open</string>
+  <string name="closeDrawer">Drawer Closed</string>
+  <string-array name="stepGoals">
+    <item>Hourly</item>
+    <item>Daily</item>
+    <item>Weekly</item>
+    <item>Monthly</item>
+    <item>Yearly</item>
+  </string-array>
+  <string-array name="genders">
+    <item>Male</item>
+    <item>Female</item>
+  </string-array> 
+</resources>

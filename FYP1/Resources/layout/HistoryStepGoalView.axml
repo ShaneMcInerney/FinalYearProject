@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+  <RadioGroup
+    android:orientation="horizontal"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/sleepRadioBtnsGroup">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Hourly"
+        android:id="@+id/hourStepGoalRadBtn" />
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Daily"
+        android:id="@+id/dailyStepGoalRadBtn" />
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Weekly"
+        android:id="@+id/weekStepGoalRadBtn" />
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monthly"
+        android:id="@+id/monthStepGoalRadBtn" />
+  </RadioGroup>
+  <RadioGroup
+    android:orientation="horizontal"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yearly"
+        android:id="@+id/yearStepGoalRadBtn" />
+    <RadioButton
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:checked="true"
+       android:text="All"
+       android:id="@+id/allStepGoalHistoryRadBtn" />
+  </RadioGroup>
+    <ListView
+         android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/stepGoalLstView"
+        android:textSize="20sp"
+        android:isScrollContainer="true"
+        android:clickable="true" />
+</LinearLayout>

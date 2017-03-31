@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <color android:color="#ffffff"/>
+  </item>
+  <item>
+   <nine-patch xmlns:android="http://schemas.android.com/apk/res/android"
+android:src="@drawable/SplashScreen" 
+android:dither="false"/>
+  </item>
+</layer-list>
