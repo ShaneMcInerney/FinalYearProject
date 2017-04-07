@@ -19,19 +19,19 @@ namespace FYP_Droid.Utilities
         private static AppDatabase m_appDatabase = new AppDatabase(m_conn);
 
         private static AccelerometerManagerAndroid m_accelerometerManager = new AccelerometerManagerAndroid(m_appDatabase);
-        private static WeightManagerAndroid m_weightManager = new WeightManagerAndroid(m_appDatabase);
-        private static StepManagerAndroid m_stepManager = new StepManagerAndroid(m_appDatabase);
-        private static StepGoalManagerAndroid m_stepGoalManager = new StepGoalManagerAndroid(m_appDatabase);
-        private static EmergencyContactManagerAndroid m_emergencyContactManager = new EmergencyContactManagerAndroid(m_appDatabase);
+        private static WeightManager m_weightManager = new WeightManager(m_appDatabase);
+        private static StepManager m_stepManager = new StepManager(m_appDatabase);
+        private static StepGoalManager m_stepGoalManager = new StepGoalManager(m_appDatabase);
+        private static EmergencyContactManager m_emergencyContactManager = new EmergencyContactManager(m_appDatabase);
         private static EmergencyMessageManagerAndroid m_emergencyMessageManager = new EmergencyMessageManagerAndroid(m_appDatabase);
         private static LocationManagerAndroid m_locationManager = new LocationManagerAndroid();
         private static FallAlarmManagerAndroid m_alarmManager = new FallAlarmManagerAndroid();
-        private static UserManagerAndroid m_userManager = new UserManagerAndroid(m_appDatabase);
-        private static SleepManagerAndroid m_sleepManager = new SleepManagerAndroid(m_appDatabase);
+        private static UserManager m_userManager = new UserManager(m_appDatabase);
+        private static SleepManager m_sleepManager = new SleepManager(m_appDatabase);
         private static SleepAlarmManagerAndroid m_sleepAlarmManager = new SleepAlarmManagerAndroid(m_appDatabase);
-        private static CalibrationManagerAndroid m_calibrationManager = new CalibrationManagerAndroid(m_appDatabase);
+        private static CalibrationManager m_calibrationManager = new CalibrationManager(m_appDatabase);
         private static GraphManager m_graphManager = new GraphManager();
-        private static FallManagerAndroid m_fallManager = new FallManagerAndroid(m_appDatabase);
+        private static FallManager m_fallManager = new FallManager(m_appDatabase);
 
 
         #endregion //Fields
@@ -121,7 +121,7 @@ namespace FYP_Droid.Utilities
         /// <summary>
         /// Gets/Sets m_weightManager
         /// </summary>
-        public static WeightManagerAndroid WeightManager
+        public static WeightManager WeightManager
         {
             get
             {
@@ -137,7 +137,7 @@ namespace FYP_Droid.Utilities
         /// <summary>
         /// Gets/Sets
         /// </summary>
-        public static StepManagerAndroid StepManager
+        public static StepManager StepManager
         {
             get
             {
@@ -153,7 +153,7 @@ namespace FYP_Droid.Utilities
         /// <summary>
         /// Gets/Sets m_stepGoalManager
         /// </summary>
-        public static StepGoalManagerAndroid StepGoalManager
+        public static StepGoalManager StepGoalManager
         {
             get
             {
@@ -169,7 +169,7 @@ namespace FYP_Droid.Utilities
         /// <summary>
         /// Gets/Sets m_emergencyContactManager
         /// </summary>
-        public static EmergencyContactManagerAndroid EmergencyContactManager
+        public static EmergencyContactManager EmergencyContactManager
         {
             get
             {
@@ -233,7 +233,7 @@ namespace FYP_Droid.Utilities
         /// <summary>
         /// Gets/Sets m_userManager
         /// </summary>
-        public static UserManagerAndroid UserManager
+        public static UserManager UserManager
         {
             get
             {
@@ -249,7 +249,7 @@ namespace FYP_Droid.Utilities
         /// <summary>
         /// Gets/Sets m_sleepManager
         /// </summary>
-        public static SleepManagerAndroid SleepManager
+        public static SleepManager SleepManager
         {
             get
             {
@@ -281,7 +281,7 @@ namespace FYP_Droid.Utilities
         /// <summary>
         /// Gets/Sets m_calibrationManager
         /// </summary>
-        public static CalibrationManagerAndroid CalibrationManager
+        public static CalibrationManager CalibrationManager
         {
             get
             {
@@ -313,7 +313,7 @@ namespace FYP_Droid.Utilities
         /// <summary>
         /// Gets/Sets m_fallManager
         /// </summary>
-        public static FallManagerAndroid FallManager
+        public static FallManager FallManager
         {
             get
             {

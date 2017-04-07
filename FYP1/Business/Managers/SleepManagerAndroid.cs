@@ -85,6 +85,16 @@ namespace FYP_Droid.Business.Managers
         }
 
         /// <summary>
+        /// Get latest sleep entry in the applications DB
+        /// </summary>
+        /// <returns>Most recent slee entry i the application's DB</returns>
+        public SleepEntry GetLatestSleepEntryForDate(DateTime date)
+        {
+            var latestSleepEntry = this.AppDatabase.GetAllSleepEntries().Where(x => x.Date.DayOfYear == date.DayOfYear).LastOrDefault();
+            return latestSleepEntry;
+        }
+
+        /// <summary>
         /// Get all slep entries in the DB
         /// </summary>
         /// <returns>All sleep entries in the DB</returns>
@@ -134,6 +144,28 @@ namespace FYP_Droid.Business.Managers
         }
 
         /// <summary>
+        /// Get sleep entries between dates
+        /// </summary>
+        /// <param name="start">start of period</param>
+        /// <param name="end">end of period</param>
+        /// <returns>all sleep entries between the given dates</returns>
+        public IEnumerable<SleepEntry> GetLastSleepEntiesBetweenDates(DateTime start, DateTime end)
+        {
+            var allEntries =GetAllSleepEntries().Where(x => x.Date.DayOfYear >= start.DayOfYear && x.Date.DayOfYear <= end.DayOfYear);
+            var lastSleepEntriesForDate = new List<SleepEntry>();
+            for (var date =start;date<=end;date=date.AddDays(1))
+            {
+                var latestSleepEntry = GetLatestSleepEntryForDate(date);
+                if(latestSleepEntry!=null)
+                {
+                    lastSleepEntriesForDate.Add(latestSleepEntry);
+                }  
+            }
+
+            return lastSleepEntriesForDate;
+        }
+
+        /// <summary>
         /// Get sum of sleep in list of sleep entries
         /// </summary>
         /// <param name="sleepEtries">sleep entries to get the total sum of hours for</param>
@@ -168,7 +200,7 @@ namespace FYP_Droid.Business.Managers
         {
             //get start of week
             DateTime startOfWeek = GetStartOfWeek();
-            return GetSleepEntriesBetweenDates(startOfWeek, DateTime.Now);
+            return GetLastSleepEntiesBetweenDates(startOfWeek, DateTime.Now);
         }
 
         /// <summary>

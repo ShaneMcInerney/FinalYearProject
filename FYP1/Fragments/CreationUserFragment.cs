@@ -239,7 +239,7 @@ namespace FYP_Droid.Fragments
                 UserAgeEditTxt.Hint = "";
                 UserDOBEditTxt.Text = AppUser.Dob.ToString();
                 UserDOBEditTxt.Hint = "";
-                UserWeightEditTxt.Text = AppUser.Weight.ToString();
+                UserWeightEditTxt.Text = GlobalUtilities.WeightManager.GetLatestWeightEntry().Weight.ToString();
                 UserWeightEditTxt.Hint = "";
                 UserHeightEditTxt.Text = AppUser.Height.ToString();
                 UserHeightEditTxt.Hint = "";

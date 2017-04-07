@@ -99,6 +99,16 @@ namespace FYP_Droid.Business.Managers
         }
 
         /// <summary>
+        /// Get last weight entry fro a given day of the year
+        /// </summary>
+        /// <param name="dayOfTheYear">day of the year to retrieve last weight entry for</param>
+        /// <returns>last entry for the given day of the year</returns>
+        public WeightEntry GetLastWeightEntryForDate(DateTime date)
+        {
+            return AppDatabase.GetAllWeightEntries().LastOrDefault(x => x.Date.DayOfYear == date.DayOfYear);
+        }
+
+        /// <summary>
         /// Get weight entries for given date
         /// </summary>
         /// <param name="date">date to retrieve entries for</param>
@@ -204,11 +214,20 @@ namespace FYP_Droid.Business.Managers
             List<WeightEntry> output = new List<WeightEntry>();
             //get starting day of the year
             var dayOfYear = startDate.DayOfYear;
+
+            /* for (var date = startOfWeek; date <= DateTime.Now; date = date.AddDays(1))
+             {
+                 //get amount for day
+                 var amount = GetTotalStepsForDate(date);
+                 //add step entry to daily totals
+                 dailiyTotals.Add(new StepEntry(amount, date, new TimeSpan(24, 0, 0)));
+             }*/
+            var date = startDate;
             //while in date range
-            while (dayOfYear >= startDate.DayOfYear && dayOfYear <= endDate.DayOfYear)
+            while (date>= startDate && date <= endDate)
             {
                 //get last entry for that day
-                var latestEntryForDate = GetLastWeightEntryForDayOfYear(dayOfYear);
+                var latestEntryForDate = GetLastWeightEntryForDate(date);
                 //if entry is not null
                 if (latestEntryForDate != null)
                 {
@@ -216,7 +235,7 @@ namespace FYP_Droid.Business.Managers
                     output.Add(latestEntryForDate);
                 }
                 //increment day of the year
-                dayOfYear++;
+                date=date.AddDays(1);
             }
             return output;
         }

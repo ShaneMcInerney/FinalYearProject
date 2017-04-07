@@ -65,14 +65,6 @@
       <HintPath>..\packages\FastAndroidCamera.2.0.0\lib\MonoAndroid403\FastAndroidCamera.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Media.Plugin">
-      <HintPath>..\packages\Xam.Plugin.Media.1.0.1\lib\MonoAndroid10\Media.Plugin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Media.Plugin.Abstractions">
-      <HintPath>..\packages\Xam.Plugin.Media.1.0.1\lib\MonoAndroid10\Media.Plugin.Abstractions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -213,10 +205,7 @@
     <Compile Include="Activities\PotentialFallDetectedActivity.cs" />
     <Compile Include="Activities\NaivgationActivity.cs" />
     <Compile Include="Business\Managers\FallAlarmManagerAndroid.cs" />
-    <Compile Include="Business\Managers\CalibrationManagerAndroid.cs" />
-    <Compile Include="Business\Managers\FallManagerAndroid.cs" />
     <Compile Include="Business\Managers\SleepAlarmManagerAndroid.cs" />
-    <Compile Include="Business\Managers\UserManagerAndroid.cs" />
     <Compile Include="Fragments\BaseFragment.cs" />
     <Compile Include="Fragments\CreationContactMessageFragment.cs" />
     <Compile Include="Fragments\CreationEmergencyContactsListFragment.cs" />
@@ -252,13 +241,8 @@
     <Compile Include="Utilities\FallReceiver.cs" />
     <Compile Include="Utilities\FileHelperAndroid.cs" />
     <Compile Include="Business\Managers\AccelerometerManagerAndroid.cs" />
-    <Compile Include="Business\Managers\EmergencyContactManagerAndroid.cs" />
     <Compile Include="Business\Managers\EmergencyMessageManagerAndroid.cs" />
     <Compile Include="Business\Managers\LocationManagerAndroid.cs" />
-    <Compile Include="Business\Managers\SleepManagerAndroid.cs" />
-    <Compile Include="Business\Managers\StepGoalManagerAndroid.cs" />
-    <Compile Include="Business\Managers\StepManagerAndroid.cs" />
-    <Compile Include="Business\Managers\WeightManagerAndroid.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Services\FallDetectorService.cs" />
     <Compile Include="Services\StepCounterService.cs" />

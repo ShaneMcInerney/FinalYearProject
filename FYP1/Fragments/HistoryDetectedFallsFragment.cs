@@ -169,6 +169,10 @@ namespace FYP_Droid.Fragments
             FallListView.SetBackgroundColor(Android.Graphics.Color.DarkGray);
             //set lst view
             FallListView = ListViewHelper.DisplayListAsSimpleListView(Activity.ApplicationContext);
+            //get falls for week
+            var thisWeeksSleepEntries = GlobalUtilities.FallManager.GetFallsForCurrentWeek().ToList();
+            //update list view
+            UpdateListView(thisWeeksSleepEntries);
         }
 
         /// <summary>

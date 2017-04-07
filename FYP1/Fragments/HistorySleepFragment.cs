@@ -163,10 +163,7 @@ namespace FYP_Droid.Fragments
             var thisWeeksSleepEntries = GlobalUtilities.SleepManager.GetSleepEntriesForCurrentWeek().ToList();
             //update list view and plot
             UpdateListViewAndPlotView(thisWeeksSleepEntries, GraphType.Week);
-            //set background colour
-            SleepHistoryLstView.SetBackgroundColor(Android.Graphics.Color.DarkGray);
-            //set plot view model
-            SleepHistoryPlotView.Model = GlobalUtilities.GraphManager.CreateSleepPlotModel("Sleep History", thisWeeksSleepEntries, GraphType.Week);
+           
             //set up buttons
             WeekSleepRadBtn = FragView.FindViewById<RadioButton>(Resource.Id.weekSleepHistoryRadBtn);
             MonthSleepRadBtn = FragView.FindViewById<RadioButton>(Resource.Id.monthSleepHistoryRadBtn);
@@ -232,6 +229,8 @@ namespace FYP_Droid.Fragments
 
             //Display Weight Entries in List View
             SleepHistoryLstView = ListViewHelper.DisplayListAsSimpleListView(Activity.ApplicationContext);
+            //set background colour
+            SleepHistoryLstView.SetBackgroundColor(Android.Graphics.Color.DarkGray);
             //update mdel
             SleepHistoryPlotView.Model = GlobalUtilities.GraphManager.CreateSleepPlotModel("Sleep History", sleepEntries, graphType);
         }

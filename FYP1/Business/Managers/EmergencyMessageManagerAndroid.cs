@@ -10,12 +10,12 @@ using System.Collections.Generic;
 
 namespace FYP_Droid.Business.Managers
 {
-    public class EmergencyMessageManagerAndroid : IEmergencyMessageManager
+    public class EmergencyMessageManagerAndroid : EmergencyMessageManager
     {
         #region Fields
 
-        private AppDatabase m_appDatabase;
         private Context m_context;
+
         #endregion //Fields
 
         #region Constructors
@@ -27,28 +27,12 @@ namespace FYP_Droid.Business.Managers
 
         public EmergencyMessageManagerAndroid(AppDatabase database)
         {
-            this.m_appDatabase = database;
+            this.AppDatabase = database;
         }
 
         #endregion //Constructors
 
         #region Property Accessors
-
-        /// <summary>
-        /// Gets/Sets m_appDatabase
-        /// </summary>
-        public AppDatabase AppDatabase
-        {
-            get
-            {
-                return m_appDatabase;
-            }
-
-            set
-            {
-                m_appDatabase = value;
-            }
-        }
 
         /// <summary>
         /// Gets/Sets m_context
@@ -69,41 +53,6 @@ namespace FYP_Droid.Business.Managers
         #endregion //Property Accessors
 
         #region Mehtods
-
-        /// <summary>
-        /// Get emergency message from db
-        /// </summary>
-        /// <returns>Emergency message saved in the app DB</returns>
-        public EmergencyMessage GetEmergencyMessage()
-        {
-            return AppDatabase.GetEmergencyMessage();
-        }
-
-        /// <summary>
-        /// Save emergency message in db
-        /// </summary>
-        /// <param name="emergencyMessage"></param>
-        public void SaveEmergencyMessage(EmergencyMessage emergencyMessage)
-        {
-            AppDatabase.SaveEmergencyMessage(emergencyMessage);
-        }
-
-        /// <summary>
-        /// Delete emergency message from db
-        /// </summary>
-        public void DeleteEmergencyMessage()
-        {
-            AppDatabase.DeleteEmergencyMessage();
-        }
-
-        /// <summary>
-        /// Check if emergency message exists in db
-        /// </summary>
-        /// <returns></returns>
-        public bool EmergencyMessageExists()
-        {
-            return AppDatabase.EmergencyMessageExists();
-        }
 
         /// <summary>
         /// Sends an emergency message, in the background, to an individual contact

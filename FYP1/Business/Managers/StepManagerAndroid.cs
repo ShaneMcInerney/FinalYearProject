@@ -464,7 +464,14 @@ namespace FYP_Droid.Business.Managers
             //set month
             var month = DateTime.Now.Month;
             //for each day of the week up to current
-            for (int i = startOfWeek.Day; i <= DateTime.Now.Day; i++)
+            for(var date =startOfWeek;date<=DateTime.Now;date=date.AddDays(1))
+            {
+                //get amount for day
+                var amount = GetTotalStepsForDate(date);
+                //add step entry to daily totals
+                dailiyTotals.Add(new StepEntry(amount, date, new TimeSpan(24, 0, 0)));
+            }
+          /*  for (int i = startOfWeek.Day; i <= DateTime.Now.Day; i++)
             {
                 //new date for day
                 DateTime d = new DateTime(year, month, i);
@@ -472,7 +479,7 @@ namespace FYP_Droid.Business.Managers
                 var amount = GetTotalStepsForDate(d);
                 //add step entry to daily totals
                 dailiyTotals.Add(new StepEntry(amount, d, new TimeSpan(24, 0, 0)));
-            }
+            }*/
             return dailiyTotals;
         }
 

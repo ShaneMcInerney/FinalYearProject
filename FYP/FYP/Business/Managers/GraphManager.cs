@@ -87,13 +87,14 @@ namespace FYP.Business.Managers
                     //get start of week
                     DateTime startOfWeek = GetStartOfWeek();
                     //sets length of x axis
-                    plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Maximum = DateTime.Now.Day, Minimum = startOfWeek.Day, IntervalLength = 50 });
+                    plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Maximum = 7, Minimum = 1, IntervalLength = 50 });
                     //sets length of y axis
                     plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Maximum = pointsToPlot.Max(x => x.Weight) + 40, Minimum = pointsToPlot.Min(x => x.Weight) - 40, IntervalLength = 20 });
                     //adding points to data series
                     foreach (var p in pointsToPlot)
                     {
-                        series.Points.Add(new DataPoint(p.Date.Day, p.Weight));
+                        int day = GetDayOfWeek(p.Date);
+                        series.Points.Add(new DataPoint(day, p.Weight));
                     }
                 }
                 //if graph type is month
@@ -153,16 +154,20 @@ namespace FYP.Business.Managers
                 if (graphType == GraphType.Week)
                 {
                     //get start of year
-                    DateTime startOfWeek = GetStartOfYear();
+                    DateTime startOfWeek = GetStartOfWeek();
                     //set up x axis
-                    plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Maximum = DateTime.Now.Day, Minimum = startOfWeek.Day });
+                    plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Maximum = 7, Minimum = 1 });
                     //set up y axis
                     plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Maximum = pointsToPlot.Max(x => x.Count) + 1000, Minimum = pointsToPlot.Min(x => x.Count) - 1000 });
                     //adding points to data series
                     foreach (var p in pointsToPlot)
                     {
-                        double x = double.Parse(p.Date.Day.ToString() + "." + p.Date.Hour.ToString() + p.Date.Minute.ToString());
-                        series.Points.Add(new DataPoint(x, p.Count));
+
+                        int day = GetDayOfWeek(p.Date);
+                        //add day of month to graph
+                        //series.Points.Add(new DataPoint(day, p.SleepLength.Hours));
+                        //double x = double.Parse(p.Date.Day.ToString() + "." + p.Date.Hour.ToString() + p.Date.Minute.ToString());
+                        series.Points.Add(new DataPoint(day, p.Count));
                     }
                 }
                 //if graph type is month
@@ -240,8 +245,17 @@ namespace FYP.Business.Managers
                     //adding points to data series
                     foreach (var p in pointsToPlot)
                     {
-                        //add day of month to graph
-                        series.Points.Add(new DataPoint(p.Date.Day, p.SleepLength.Hours));
+                        if (graphType == GraphType.Week)
+                        {
+                            int day=GetDayOfWeek(p.Date);
+                            //add day of month to graph
+                            series.Points.Add(new DataPoint(day, p.SleepLength.Hours));
+                        }
+                        else
+                        {
+                            //add day of month to graph
+                            series.Points.Add(new DataPoint(p.Date.Day, p.SleepLength.Hours));
+                        }
                     }
                 }
                 //add series to plot model
@@ -303,7 +317,7 @@ namespace FYP.Business.Managers
                 //get start of week
                 DateTime startOfWeek = GetStartOfWeek();
                 //set x axis for week
-                plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Maximum = DateTime.Now.Day, Minimum = startOfWeek.Day });
+                plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Maximum = 7, Minimum = 1 });
             }
             //if graph type is month
             if (graphType == GraphType.Month)

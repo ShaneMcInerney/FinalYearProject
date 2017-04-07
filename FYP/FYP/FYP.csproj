@@ -37,22 +37,21 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Business\Managers\AccelerometerManager.cs" />
     <Compile Include="Business\Managers\AlarmCreatedArgs.cs" />
     <Compile Include="Business\Managers\BaseManager.cs" />
+    <Compile Include="Business\Managers\CalibrationManager.cs" />
+    <Compile Include="Business\Managers\EmergencyContactManager.cs" />
+    <Compile Include="Business\Managers\EmergencyMessageManager.cs" />
+    <Compile Include="Business\Managers\FallManager.cs" />
     <Compile Include="Business\Managers\GraphManager.cs" />
-    <Compile Include="Business\Managers\IAccelerometerManager.cs" />
     <Compile Include="Business\Managers\IFallAlarmManager.cs" />
-    <Compile Include="Business\Managers\ICalibrationManager.cs" />
-    <Compile Include="Business\Managers\IEmergencyContactManager.cs" />
-    <Compile Include="Business\Managers\IEmergencyMessageManager.cs" />
-    <Compile Include="Business\Managers\IFallManager.cs" />
-    <Compile Include="Business\Managers\ILocationManager.cs" />
-    <Compile Include="Business\Managers\ISleepAlarmManager.cs" />
-    <Compile Include="Business\Managers\ISleepManager.cs" />
-    <Compile Include="Business\Managers\IStepGoalManager.cs" />
-    <Compile Include="Business\Managers\IStepManager.cs" />
-    <Compile Include="Business\Managers\IUserManager.cs" />
-    <Compile Include="Business\Managers\IWeightManager.cs" />
+    <Compile Include="Business\Managers\SleepAlarmManager.cs" />
+    <Compile Include="Business\Managers\SleepManager.cs" />
+    <Compile Include="Business\Managers\StepGoalManager.cs" />
+    <Compile Include="Business\Managers\StepManager.cs" />
+    <Compile Include="Business\Managers\UserManager.cs" />
+    <Compile Include="Business\Managers\WeightManager.cs" />
     <Compile Include="Business\Models\AccelerometerReading.cs" />
     <Compile Include="Business\Models\SleepAlarm.cs" />
     <Compile Include="Business\Models\BaseEntity.cs" />
